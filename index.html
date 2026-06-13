@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vishnu - MCA Student | AI/ML Enthusiast | Python Developer. Portfolio showcasing AI & ML projects, skills, and achievements." />
+  <meta name="keywords" content="Vishnu, AI ML Engineer, Python Developer, Data Analyst, MCA Student, NLP, Machine Learning" />
+  <meta name="author" content="Vishnu" />
+  <title>Vishnu | AI/ML Engineer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">V</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <span class="loader-text">Initializing...</span>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+  <!-- ─── NAVBAR ─── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>Vishnu<span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#achievements" class="nav-link">Achievements</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero" id="hero">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="dot"></span> Available for Internships &amp; Opportunities
+        </div>
+        <h1 class="hero-name">
+          Hi, I'm <span class="name-highlight">Vishnu</span>
+        </h1>
+        <div class="hero-role">
+          <span class="static-text">I build&nbsp;</span>
+          <span class="typed-wrapper">
+            <span class="typed-text" id="typedText"></span>
+            <span class="cursor-blink">|</span>
+          </span>
+        </div>
+        <p class="hero-bio">
+          MCA student at GLA University crafting intelligent systems with Python, 
+          Machine Learning, and NLP — turning raw data into real-world solutions.
+        </p>
+        <div class="hero-actions">
+          <a href="Vishnu_Resume_1.pdf" download class="btn btn-primary">
+            <span class="btn-icon">↓</span> Download Resume
+          </a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/vishnu-jadon" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://github.com/vishnuyaduvanshi" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="mailto:vishnuyaduvanshi65@gmail.com" class="social-link" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="avatar-frame">
+          <div class="avatar-ring ring-1"></div>
+          <div class="avatar-ring ring-2"></div>
+          <div class="avatar-placeholder">
+            <span class="avatar-initial">V</span>
+          </div>
+          <div class="avatar-badge">
+            <span class="badge-dot"></span> Open to Work
+          </div>
+        </div>
+        <div class="floating-chip chip-1"><span>🐍</span> Python</div>
+        <div class="floating-chip chip-2"><span>🤖</span> ML / AI</div>
+        <div class="floating-chip chip-3"><span>📊</span> Data</div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-label">01 — About Me</div>
+      <h2 class="section-title">Who I Am</h2>
+      <div class="about-grid">
+        <div class="about-text glass-card reveal">
+          <p>
+            I'm <strong>Vishnu</strong>, an MCA student at GLA University, Mathura, passionate about 
+            building AI-powered systems that solve real problems. My journey started with curiosity 
+            about how machines learn — and hasn't stopped since.
+          </p>
+          <p>
+            I specialize in <strong>Python development</strong>, <strong>Machine Learning</strong>, 
+            and <strong>Natural Language Processing</strong>. I've built projects that classify emails 
+            intelligently and power conversational AI systems.
+          </p>
+          <p>
+            My goal is to join a forward-thinking team as an <strong>AI/ML Intern or Junior Engineer</strong>, 
+            where I can contribute to meaningful products while growing fast. I thrive at the intersection 
+            of data, logic, and human experience.
+          </p>
+        </div>
+        <div class="about-stats reveal">
+          <div class="stat-card glass-card">
+            <div class="stat-number" data-target="2">0</div>
+            <div class="stat-label">AI/ML Projects</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-number" data-target="5">0</div>
+            <div class="stat-label">Tech Skills</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-number" data-target="1">0</div>
+            <div class="stat-label">Certification</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-number" data-target="2027">2024</div>
+            <div class="stat-label">MCA Completion</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SKILLS ─── -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <div class="section-label">02 — Skills</div>
+      <h2 class="section-title">What I Work With</h2>
+      <div class="skills-grid">
+        <div class="skill-card glass-card reveal">
+          <div class="skill-icon">🐍</div>
+          <div class="skill-name">Python</div>
+          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          <div class="skill-level">Advanced</div>
+        </div>
+        <div class="skill-card glass-card reveal">
+          <div class="skill-icon">🗄️</div>
+          <div class="skill-name">MySQL</div>
+          <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+          <div class="skill-level">Proficient</div>
+        </div>
+        <div class="skill-card glass-card reveal">
+          <div class="skill-icon">🤖</div>
+          <div class="skill-name">Machine Learning</div>
+          <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+          <div class="skill-level">Proficient</div>
+        </div>
+        <div class="skill-card glass-card reveal">
+          <div class="skill-icon">💬</div>
+          <div class="skill-name">NLP</div>
+          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          <div class="skill-level">Intermediate</div>
+        </div>
+        <div class="skill-card glass-card reveal">
+          <div class="skill-icon">📊</div>
+          <div class="skill-name">Data Visualization</div>
+          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          <div class="skill-level">Proficient</div>
+        </div>
+        <div class="skill-card glass-card reveal">
+          <div class="skill-icon">🔗</div>
+          <div class="skill-name">Git & GitHub</div>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          <div class="skill-level">Advanced</div>
+        </div>
+        <div class="skill-card glass-card reveal">
+          <div class="skill-icon">🗃️</div>
+          <div class="skill-name">DBMS</div>
+          <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
+          <div class="skill-level">Intermediate</div>
+        </div>
+        <div class="skill-card glass-card reveal">
+          <div class="skill-icon">🧱</div>
+          <div class="skill-name">OOP</div>
+          <div class="skill-bar"><div class="skill-fill" data-width="83"></div></div>
+          <div class="skill-level">Proficient</div>
+        </div>
+      </div>
+      <div class="tools-row reveal">
+        <span class="section-label" style="margin-bottom:1rem;display:block;">Tools &amp; Environments</span>
+        <div class="tools-chips">
+          <span class="tool-chip">Anaconda</span>
+          <span class="tool-chip">VS Code</span>
+          <span class="tool-chip">Jupyter Notebook</span>
+          <span class="tool-chip">Power BI</span>
+          <span class="tool-chip">Matplotlib</span>
+          <span class="tool-chip">Seaborn</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROJECTS ─── -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-label">03 — Projects</div>
+      <h2 class="section-title">Things I've Built</h2>
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card glass-card reveal" data-project="email">
+          <div class="project-img">
+            <div class="project-img-bg email-bg">
+              <div class="project-img-icon">📧</div>
+            </div>
+            <div class="project-overlay">
+              <button class="view-btn" onclick="openModal('email')">View Details</button>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">scikit-learn</span>
+            </div>
+            <h3 class="project-title">Email Detection System</h3>
+            <p class="project-desc">
+              A spam classifier using ML that distinguishes legitimate emails from spam with high accuracy through feature engineering and model optimization.
+            </p>
+            <div class="project-actions">
+              <a href="https://github.com/vishnuyaduvanshi" target="_blank" rel="noopener" class="btn btn-sm btn-outline">GitHub</a>
+              <button class="btn btn-sm btn-primary" onclick="openModal('email')">Live Demo</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card glass-card reveal" data-project="chatbot">
+          <div class="project-img">
+            <div class="project-img-bg chatbot-bg">
+              <div class="project-img-icon">🤖</div>
+            </div>
+            <div class="project-overlay">
+              <button class="view-btn" onclick="openModal('chatbot')">View Details</button>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">NLP</span>
+              <span class="tag">Conversational AI</span>
+            </div>
+            <h3 class="project-title">AI Chatbot System</h3>
+            <p class="project-desc">
+              An intelligent chatbot powered by NLP techniques — intent recognition, entity extraction, and automated response generation for human-like conversations.
+            </p>
+            <div class="project-actions">
+              <a href="https://github.com/vishnuyaduvanshi" target="_blank" rel="noopener" class="btn btn-sm btn-outline">GitHub</a>
+              <button class="btn btn-sm btn-primary" onclick="openModal('chatbot')">Live Demo</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ACHIEVEMENTS ─── -->
+  <section class="section section-alt" id="achievements">
+    <div class="container">
+      <div class="section-label">04 — Achievements</div>
+      <h2 class="section-title">Milestones</h2>
+      <div class="achievements-grid">
+        <div class="achievement-card glass-card reveal">
+          <div class="ach-icon">🏆</div>
+          <h3>AI Chatbot System</h3>
+          <p>Designed and deployed a full NLP-powered chatbot featuring intent recognition and context-aware responses.</p>
+        </div>
+        <div class="achievement-card glass-card reveal">
+          <div class="ach-icon">🎯</div>
+          <h3>Email Detection System</h3>
+          <p>Built a production-grade spam classifier using supervised ML, with data preprocessing and accuracy optimization.</p>
+        </div>
+        <div class="achievement-card glass-card reveal">
+          <div class="ach-icon">📜</div>
+          <h3>Oracle MySQL Certification</h3>
+          <p>Earned the Oracle MySQL Learning Path Certification, validating expertise in database design and SQL querying.</p>
+        </div>
+        <div class="achievement-card glass-card reveal">
+          <div class="ach-icon">🚀</div>
+          <h3>Continuous AI/ML Learning</h3>
+          <p>Actively expanding skills in deep learning, transformer models, and MLOps to stay ahead of the curve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EDUCATION ─── -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-label">05 — Education</div>
+      <h2 class="section-title">Academic Journey</h2>
+      <div class="edu-timeline">
+        <div class="edu-card glass-card reveal">
+          <div class="edu-year current">2025 → 2027</div>
+          <div class="edu-badge">Current</div>
+          <h3 class="edu-degree">Master of Computer Applications (MCA)</h3>
+          <div class="edu-school">GLA University, Mathura</div>
+          <p class="edu-desc">Specializing in AI, Machine Learning, and advanced software engineering. Building production-grade AI systems as coursework and independent projects.</p>
+          <div class="edu-tags">
+            <span class="tag">AI & ML</span><span class="tag">Python</span><span class="tag">Algorithms</span>
+          </div>
+        </div>
+        <div class="edu-connector"></div>
+        <div class="edu-card glass-card reveal">
+          <div class="edu-year">2022 → 2025</div>
+          <div class="edu-badge completed">Completed</div>
+          <h3 class="edu-degree">Bachelor of Computer Applications (BCA)</h3>
+          <div class="edu-school">Dr. Bhimrao Ambedkar University, Agra</div>
+          <p class="edu-desc">Core foundation in Computer Science, DBMS, Data Structures, OOP with Java &amp; Python, and Software Engineering principles.</p>
+          <div class="edu-tags">
+            <span class="tag">CS Fundamentals</span><span class="tag">DBMS</span><span class="tag">OOP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="section-label">06 — Contact</div>
+      <h2 class="section-title">Let's Connect</h2>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="contact-intro">
+            I'm actively looking for <strong>internship opportunities</strong> in AI/ML, Python development, 
+            and data analysis. If you have a project, role, or just want to chat — I'd love to hear from you.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:vishnuyaduvanshi65@gmail.com" class="contact-item">
+              <div class="contact-item-icon">✉</div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">vishnuyaduvanshi65@gmail.com</div>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/vishnu-jadon" target="_blank" rel="noopener" class="contact-item">
+              <div class="contact-item-icon">in</div>
+              <div>
+                <div class="contact-item-label">LinkedIn</div>
+                <div class="contact-item-value">vishnu-jadon</div>
+              </div>
+            </a>
+            <a href="https://github.com/vishnuyaduvanshi" target="_blank" rel="noopener" class="contact-item">
+              <div class="contact-item-icon">⌥</div>
+              <div>
+                <div class="contact-item-label">GitHub</div>
+                <div class="contact-item-value">vishnuyaduvanshi</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form glass-card reveal" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Internship Opportunity" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about the role or project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span id="submitText">Send Message →</span>
+          </button>
+          <div class="form-success" id="formSuccess">
+            ✅ Message sent! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>Vishnu<span class="logo-bracket">/&gt;</span>
+        </div>
+        <p class="footer-copy">© 2025 Vishnu · Built with ❤️ using pure HTML, CSS & JS</p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/vishnu-jadon" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://github.com/vishnuyaduvanshi" target="_blank" rel="noopener" aria-label="GitHub">gh</a>
+          <a href="mailto:vishnuyaduvanshi65@gmail.com" aria-label="Email">✉</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── PROJECT MODAL ─── -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal glass-card" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
